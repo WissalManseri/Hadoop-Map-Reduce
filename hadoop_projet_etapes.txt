@@ -1,0 +1,38 @@
+sudo groupadd supergroup
+sudo usermod -aG supergroup hduser
+
+sudo /usr/local/hadoop/sbin/./start-all.sh
+
+hadoop fs -ls /
+
+hadoop fs -mkdir /GradeAnalysisProject
+
+export HADOOP_CLASSPATH=$($HADOOP_HOME/bin/hadoop classpath)
+
+hadoop fs -put /home/ubuntu22r/student_records.txt /GradeAnalysisProject/
+
+hadoop fs -ls /GradeAnalysisProject/
+
+javac -classpath $(hadoop classpath) -d GradeAnalysisProject/classes GradeAnalysisProject/src/*.java
+
+
+
+jar -cvf GradeAnalysis.jar -C GradeAnalysisProject/classes .
+
+
+# Create input directory in HDFS
+hadoop fs -mkdir /input
+
+# Upload the dataset to HDFS
+hadoop fs -put /home/ubuntu22r/student_records.txt /input/student_records.txt
+
+
+hadoop jar GradeAnalysis.jar GradeAnalysisDriver /input/student_records.txt /output/grade_analysis
+
+
+
+# View the output in HDFS
+hadoop fs -cat /output/grade_analysis/part-r-00000
+
+
+
