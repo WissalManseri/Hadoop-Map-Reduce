@@ -17,17 +17,33 @@ ______________________________________________
 
 ### Step 1: Set up Hadoop
 
-```bash
-sudo groupadd supergroup
-sudo usermod -aG supergroup hduser
-sudo /usr/local/hadoop/sbin/./start-all.sh
+          ```bash
+          sudo groupadd supergroup
+          sudo usermod -aG supergroup hduser
+          sudo /usr/local/hadoop/sbin/./start-all.sh
+          
+### Step 2: Prepare HDFS
 
 
+          hadoop fs -ls /
+          hadoop fs -mkdir /GradeAnalysisProject
 
+### Step 3: Upload Dataset to HDFS
 
+          hadoop fs -put /home/ubuntu22r/student_records.txt /GradeAnalysisProject/
 
+### Step 4: Compile and Package Java Code
+          export HADOOP_CLASSPATH=$(hadoop classpath)
+          javac -classpath $HADOOP_CLASSPATH -d GradeAnalysisProject/classes GradeAnalysisProject/src/*.java
+          jar -cvf GradeAnalysis.jar -C GradeAnalysisProject/classes .
 
-_______________________________________________
+### Step 5: Run the MapReduce Job
+          hadoop jar GradeAnalysis.jar GradeAnalysisDriver /GradeAnalysisProject/student_records.txt /output/grade_analysis
+
+### Step 6: View Output
+          hadoop fs -cat /output/grade_analysis/part-r-00000
+
+______________________________________________
 
 **✨ Conclusion:**
 
