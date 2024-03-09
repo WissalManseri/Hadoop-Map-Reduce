@@ -5,6 +5,9 @@ Hadoop is an open-source framework developed by the Apache Foundation for distri
 **✨ Hadoop MapReduce:**
 
 MapReduce is a programming model and a key component of the Hadoop framework. It enables parallel and distributed processing of large datasets across a cluster of servers. The MapReduce model consists of two main stages: the "map" phase, where data is filtered and transformed into key-value pairs, and the "reduce" phase, where the data is aggregated and processed to produce a final result.
+![map reduce](https://github.com/WissalManseri/Hadoop-Map-Reduce/assets/135167709/2b7c3971-bed7-4516-841d-8526fe10c438)
+
+
 
 **✨ License:**
 
@@ -57,3 +60,7 @@ Adjust paths and commands as needed based on your Hadoop setup.
 **✨ Conclusion:**
 
 In conclusion, Hadoop and Hadoop MapReduce are powerful technologies for distributed processing of massive datasets. Their ability to efficiently handle large volumes of data across server clusters has revolutionized the field of Big Data, enabling businesses and organizations to extract valuable insights from their data. Hadoop's open-source license promotes innovation and collaboration within the developer community, contributing to its widespread adoption across various industries.
+
+
+
+![hadoop](https://github.com/WissalManseri/Hadoop-Map-Reduce/assets/135167709/fd7932d7-e927-456b-a92d-098718e5b29d)
