@@ -45,6 +45,15 @@ ______________________________________________
 
 ______________________________________________
 
+- Note : 
+Ensure that Hadoop is properly installed and configured before running the program.
+Replace "/home/ubuntu22r/student_records.txt" with the path to your dataset.
+Adjust paths and commands as needed based on your Hadoop setup.
+
+- Don’t forget to adjust the paths and commands according to your specific Hadoop configuration. You can also add more details about specific program steps, dependencies, prerequisites, etc., as needed.
+
+
+
 **✨ Conclusion:**
 
 In conclusion, Hadoop and Hadoop MapReduce are powerful technologies for distributed processing of massive datasets. Their ability to efficiently handle large volumes of data across server clusters has revolutionized the field of Big Data, enabling businesses and organizations to extract valuable insights from their data. Hadoop's open-source license promotes innovation and collaboration within the developer community, contributing to its widespread adoption across various industries.
